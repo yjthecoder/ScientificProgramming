@@ -39,17 +39,26 @@ int main(int argc, char* argv[])
         
         //if conversion throws exception, then the input is bad
         std::cout << "At least one input is not an integer, run again" << std::endl;
+        
+        // One more carriage returns at the end to make result more easy to view in the console
+        std::cout << std::endl;
         return 0;
     }
     
     // Check if the converted result is exactly the same as its original string representation
     if (std::to_string(inta) != a || std::to_string(intb) != b) {
         std::cout << "At least one input is not an integer, run again" << std::endl;
+        
+        // One more carriage returns at the end to make result more easy to view in the console
+        std::cout << std::endl;
         return 0;
     }
     
     // Output the product of 'a' and 'b' with labeling message
     std::cout << "The product of " << a << " and " << b << " is " << inta * intb << std::endl;
+
+    // One more carriage returns at the end to make result more easy to view in the console
+    std::cout << std::endl;
 
     return 0;
 }
