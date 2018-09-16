@@ -1,14 +1,15 @@
-/*
-declares two vectors as arrays of double precision floating point numbers of length 3 and assigns values to each of the entries.
- 
- Extend this code so that it calculates the scalar (dot) product of these vectors and prints it to screen. Finally, extend the code so that it prints the Euclidean norm of both vectors to screen.
- 
- */
+/**********************************************************************/
+/* Problem 1.3                                                        */
+/* The program declares two vectors as arrays of double precision     */
+/* floating point numbers of length 3 and assigns values to each      */
+/* of the entries. Then calculates the scalar (dot) product of these  */
+/* vectors and prints it to screen. Finally, it calculates and prints */
+/* the Euclidean norm of both vectors to screen.                      */
+/**********************************************************************/
+
 
 #include <iostream>
-#include <cassert>
 #include <cmath>
-#include <string>
 using namespace std;
 
 
