@@ -1,11 +1,14 @@
-/***********************************************************/
-/* Problem 1.2 */
-/* This program computes the product of two input 'a' and 'b'. */
-/* The two input are obtained from the user by asking for */
-/* them to be entered on the command line. The input are */
-/* then checked to ensure they are both integer and, if so, the */
-/* product of them is printed to the screen. */
-/***********************************************************/
+/**********************************************************************/
+/* Problem 1.2                                                        */
+/* This program aims at computing the product of two integers         */
+/* from user input through command line and pirnt out the result in   */
+/* the console. The program prompts the user to input two integers    */
+/* seperated by carriage return. It then check if the input are in    */
+/* fact integers, if any of the input is not an integer, the program  */
+/* prompt the user to try again. If input are both valid integers the */
+/* program then compute the product of them and print it out to the   */
+/* console.                                                           */
+/**********************************************************************/
 
 #include <iostream>
 #include <cassert>
@@ -14,32 +17,39 @@
 
 int main(int argc, char* argv[])
 {
-    // user could input anything, we first treat them as strings
+    // User could input anything, first treat them as strings
     std::string a = "";
     std::string b = "";
-    int c;
     
-    // Get the first input from the user
-    std::cout << "Enter an integer: " << std::endl;
+    // Two integers variable to store the converted result later
+    int inta;
+    int intb;
+    
+    // Get the inputs from the user
+    std::cout << "Enter two integers seperated by carrige return: " << std::endl;
     getline(std::cin, a);
-    
-    std::cout << stoi(a) << std::endl;
-    // Check if the user input an integer for a
-    // (By gauge whether its converted integer value if equivalent to the original string)
-    assert(std::to_string(stoi(a)) == a);
-
-    
-    std::cout << "Enter another integer: " << std::endl;
     getline(std::cin, b);
     
-    // Check if the user input an integer for b
-    assert(std::to_string(stoi(b)) == b);
+
+    // Convert the inputs to integers and check if the conversion works
+    try {
+        inta = std::stoi(a);
+        intb = std::stoi(b);
+    } catch (std::invalid_argument&) {
+        
+        //if conversion throws exception, then the input is bad
+        std::cout << "At least one input is not an integer, run again" << std::endl;
+        return 0;
+    }
     
-    // By now we are sure we get two integers so we calculate the product of them
-    c = stoi(a) * stoi(b);
+    // Check if the converted result is exactly the same as its original string representation
+    if (std::to_string(inta) != a || std::to_string(intb) != b) {
+        std::cout << "At least one input is not an integer, run again" << std::endl;
+        return 0;
+    }
     
     // Output the product of 'a' and 'b' with labeling message
-    std::cout << "The product of " << a << " and " << b << " is " << c << std::endl;
+    std::cout << "The product of " << a << " and " << b << " is " << inta * intb << std::endl;
 
     return 0;
 }
