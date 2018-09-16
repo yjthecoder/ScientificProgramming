@@ -1,6 +1,7 @@
 #Project Specific
 *.xcodeproj/
 .DS_Store
+*.out
 
 
 # Prerequisites
