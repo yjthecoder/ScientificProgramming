@@ -27,7 +27,7 @@ int main(int argc, char* argv[])
     std::cout << std::endl;
     
     // Output user's full name
-    std::cout << "You full name is " << gname << " " << fname << std::endl;
+    std::cout << "You full name is " << gname << " " << fname << "." << std::endl;
     
     // One more carriage returns at the end to make result more easy to view in the console
     std::cout << std::endl;
