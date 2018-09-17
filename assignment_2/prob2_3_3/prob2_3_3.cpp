@@ -1,9 +1,9 @@
 /*********************************************************/
-/* Problem 2.3.2                                         */
-/* On top of the features provided in 2.3.1 The program  */
-/* check if the sum exceeds 100. And if so, the program  */
-/* prints out a prompt informing the user and keep doing */
-/* what is described in 2.3.1                            */
+/* Problem 2.3.3                                         */
+/* On top of the features provided in 2.3.2 The program  */
+/* allows user to enter "-2" to reset sum back to 0, and */
+/* then prints out a prompt informing the user and keep  */
+/* doing what is described in 2.3.2                      */
 /*********************************************************/
 
 #include <iostream>
@@ -21,20 +21,27 @@ int main(int argc, const char * argv[]) {
         
         // Prompt the user to input
         cout << "Please enters a positive integer to add\n"
-        << "(enter -1 to terminate) :" << endl;
+        << "(enter \"-1\" to terminate, \"-2\" to set sum to 0) :" << endl;
         cin >> input;
         
         // Handle the end of input case
         if (input == -1) {
-            cout << "\"-1\" is entered, program terminated ." << endl;
+            cout << "\"-1\" is entered, program terminated." << endl;
             break;
+        }
+        
+        // Handle the reset input case
+        if (input == -2) {
+            cout << "\"-2\" is entered, sum reset to 0" << endl << endl;
+            sum = 0;
+            continue;
         }
         
         // Increment the sum by the amount of user input
         sum += input;
-
+        
         // Print out the result
-        cout << "Current sum is: " << sum << "." << endl;
+        cout << "Current sum is: " << sum << endl;
         
         // Handle the case when sum exceeds 100
         if (sum > 100) {

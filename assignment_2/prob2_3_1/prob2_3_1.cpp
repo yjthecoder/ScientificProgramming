@@ -13,20 +13,28 @@ using namespace std;
 int main(int argc, const char * argv[]) {
     
     int sum = 0;
+    
+    // Declare a variable to hold user input outside the loop
+    // so do no have to be created every time the loop runs
     int input = 0;
     
     while (true) {
         
+        // Prompt the user to input
         cout << "Please enters a positive integer to add\n"
         << "(enter -1 to terminate) :" << endl;
         cin >> input;
         
+        // Handle the end of input case
         if (input == -1) {
             cout << "\"-1\" is entered, program terminated ." << endl;
             break;
         }
         
+        // Increment the sum by the amount of user input
         sum += input;
+        
+        // Print out the result
         cout << "Current sum is: " << sum << endl;
         cout << endl;
     }
