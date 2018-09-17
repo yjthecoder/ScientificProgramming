@@ -10,6 +10,8 @@
 
 #include <iostream>
 #include <cmath>
+
+// using the std namespace to save all the typing of std
 using namespace std;
 
 
