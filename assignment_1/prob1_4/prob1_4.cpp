@@ -8,6 +8,8 @@
 /*****************************************************************/
 
 #include <iostream>
+
+// using the std namespace to save all the typing of std
 using namespace std;
 int main(int argc, const char * argv[]) {
     // Declare four 2 × 2 matrices as required
