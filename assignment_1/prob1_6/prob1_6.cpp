@@ -8,6 +8,7 @@
 /**********************************************************************/
 
 #include <iostream>
+#include <cassert>
 
 int main(int argc, char* argv[])
 {
@@ -16,6 +17,9 @@ int main(int argc, char* argv[])
     
     // Use explicit cast to convert integer to double before doing division
     double average = ((double)(array[0] + array[1] + array[2] + array[3] + array[4])) / 5.0;
+    
+    // Check that the average is 44.8
+    assert(average == 44.8);
     
     // Print of the result
     std::cout << "Average number of cars is " << average << std::endl;
