@@ -1,6 +1,6 @@
 //
 //  main.cpp
-//  prob2_2
+//  prob2_3_2
 //
 //  Created by YUAN JI on 2018-09-17.
 //  Copyright © 2018 YUAN JI. All rights reserved.
