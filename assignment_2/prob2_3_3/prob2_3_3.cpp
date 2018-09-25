@@ -24,21 +24,28 @@ int main(int argc, const char * argv[]) {
         << "(enter \"-1\" to terminate, \"-2\" to set sum to 0) :" << endl;
         cin >> input;
         
-        // Handle the end of input case
         if (input == -1) {
+            
+            // Handle the end of input case
             cout << "\"-1\" is entered, program terminated." << endl;
             break;
-        }
-        
-        // Handle the reset input case
-        if (input == -2) {
+        } else if (input == -2) {
+            
+            // Handle the reset input case
             cout << "\"-2\" is entered, sum reset to 0" << endl << endl;
             sum = 0;
             continue;
+        } else if (input < -2) {
+            
+            //make sure only positive integer or 0 are added to sum
+            cout << input << " is invalid, "
+            <<"only \"-1\", \"-2\" and positive integers allowed!." << endl;
+            continue;
+        } else {
+            
+            // Increment the sum by the amount of user input
+            sum += input;
         }
-        
-        // Increment the sum by the amount of user input
-        sum += input;
         
         // Print out the result
         cout << "Current sum is: " << sum << endl;
