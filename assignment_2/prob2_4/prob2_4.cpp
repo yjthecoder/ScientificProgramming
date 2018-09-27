@@ -9,7 +9,7 @@
 /* C = 4A - 3B                                             */
 /* D = AB                                                  */
 /* and prints the result to screen, with each entry taking */
-/* five characters' spaces and right justfied              */
+/* five characters' spaces and right justified             */
 /***********************************************************/
 
 #include <iostream>
