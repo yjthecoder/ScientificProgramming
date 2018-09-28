@@ -16,7 +16,7 @@ using namespace std;
 int main(int argc, const char * argv[]) {
     
     // Initialize matrix A
-    double A[2][2] = {{4.0, 10.0},
+    double A[2][2] = {{4.0, 4.0 + 1.0e-20},
                       {1.0, 1.0}};
     
     // Caldulate the determinant
@@ -25,7 +25,7 @@ int main(int argc, const char * argv[]) {
     // Check the determinant is nonzero
     // Note it is good practice to compare
     // float numbers within a resonable tolerance
-    assert(fabs(detA - 0.0) >=  DBL_EPSILON);
+    assert(fabs(detA - 0.0) >=  100 * DBL_EPSILON);
     
     //if assertion passed, initialize the inverse matrix
     double inverseA[2][2];

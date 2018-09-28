@@ -2,7 +2,7 @@
 /* Problem 2.5.1                                           */
 /* The program defines a matrix A and calculate its inverse*/
 /* and prints the result to screen, with each entry taking */
-/* five characters' spaces and right justified              */
+/* five characters' spaces and right justified             */
 /***********************************************************/
 
 #include <iostream>
