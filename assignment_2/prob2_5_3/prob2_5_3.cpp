@@ -24,8 +24,8 @@ int main(int argc, const char * argv[]) {
 
     // Check the determinant is nonzero
     // Note it is good practice to compare
-    // float numbers within a resonable tolerance
-    assert(fabs(detA - 0.0) >=  100 * DBL_EPSILON);
+    // float numbers within a reasonable tolerance
+    assert(fabs(detA) >  100 * DBL_EPSILON);
     
     //if assertion passed, initialize the inverse matrix
     double inverseA[2][2];

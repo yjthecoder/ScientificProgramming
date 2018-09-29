@@ -26,15 +26,21 @@ int main(int argc, const char * argv[]) {
     for (int i = 1; i < 100; i++) {
         
         x[i] = x[i-1] - (exp(x[i-1]) + pow(x[i-1], 3) - 5)
-        / (exp(x[i-1]) + 2 * pow(x[i-1], 2));
+                        / (exp(x[i-1]) + 2 * pow(x[i-1], 2));
+        
         if (i == 1) {
+            
+            //initial print should take of x0 as well
             cout.width(8);
             cout << fixed << x[i-1] << " " << x[i] << " ";
         } else if (i % 10 == 9) {
-            // Make sure each line show ten values
+            
+            // Start a new line every ten values
             cout.width(8);
             cout << x[i] << endl;
         } else {
+            
+            //non-line-ending values sperated by a space
             cout.width(8);
             cout << x[i] << " ";
         }
