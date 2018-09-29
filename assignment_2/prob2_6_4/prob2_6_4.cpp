@@ -23,8 +23,8 @@ int main(int argc, const char * argv[]) {
     // initialize the x0 with given initial guess 0
     x_prev = 0;
     
-    // Declare a variable for difference for the
-    // two xi before the guess
+    // Declare a variable for the difference of
+    // the two xi before the current guess
     double prevXdiff;
     for (int i = 1; i < 100; i++) {
         
