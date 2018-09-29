@@ -1,10 +1,11 @@
-/*******************************************************/
-/* Problem 2.6.2                                       */
-/* The program calculate the root of given f(x) using  */
-/* the Newton-Raphson iteration method. It stores 100  */
-/* guesses in an array and prints it out to screen 10  */
-/* guesses per line                                    */
-/*******************************************************/
+/********************************************************/
+/* Problem 2.6.3                                        */
+/* On top of 2.6.2, for every xi iteration, the program */
+/* checks if the difference between two xi is shrinking */
+/* or not using an assertion statement. Note that since */
+/* we are checking against float numbers, we are using  */
+/* a reasonable tolerance of 100 * DBL_EPSILON          */
+/********************************************************/
 
 #include <iostream>
 #include <iomanip>
@@ -31,27 +32,30 @@ int main(int argc, const char * argv[]) {
         
         // Check if the difference between two
         // adjacent xi keeps decrease as i
-        // increasesi.e. guess converges to root
+        // increases, i.e. guess converges to root
         if (i > 1) {
+            
+            // get the differece of difference
             double diffOfDiffX = fabs(x[i] - x[i-1])
                                  - fabs(x[i-1] - x[i-2]);
-            cout << diffOfDiffX << endl;
-            assert(diffOfDiffX <= 100 * DBL_EPSILON);
+            
+            // check if it is shrinking
+            assert(diffOfDiffX < 100 * DBL_EPSILON);
         }
         
-//        if (i == 1) {
-//            
-//            cout.width(8);
-//            cout << fixed << x[i-1] << " " << x[i] << " ";
-//        } else if (i % 10 == 9) {
-//            
-//            // Make sure each line show ten values
-//            cout.width(8);
-//            cout << x[i] << endl;
-//        } else {
-//            cout.width(8);
-//            cout << x[i] << " ";
-//        }
+        if (i == 1) {
+            
+            cout.width(8);
+            cout << fixed << x[i-1] << " " << x[i] << " ";
+        } else if (i % 10 == 9) {
+            
+            // Make sure each line show ten values
+            cout.width(8);
+            cout << x[i] << endl;
+        } else {
+            cout.width(8);
+            cout << x[i] << " ";
+        }
         
     }
     
