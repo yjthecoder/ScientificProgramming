@@ -10,8 +10,6 @@
 /* the contents of the variable i in this location.        */
 /***********************************************************/
 
-#include <iostream>
-
 int main(int argc, const char * argv[]) {
     
     // Initialize integer i
@@ -28,6 +26,12 @@ int main(int argc, const char * argv[]) {
     
     // Store contents of i
     *p_k = i;
+    
+    // release memory
+    delete p_k;
+    
+    // get rid of dangling pointer
+    p_k = nullptr;
     
     return 0;
 }
