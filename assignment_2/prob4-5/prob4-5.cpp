@@ -1,24 +1,33 @@
-/*********************************************************/
-/* Problem 4.5                                           */
-/* This program uses the data file x_and_y.dat that was  */
-/* written in the previous exercise. The code below      */
-/* assumes that we know that the data file has 4 columns */
-/* and that we want to count the number of row           */
-/*********************************************************/
+/**********************************************************/
+/* Problem 4.5                                            */
+/* This program follows the detailed instruction provided */
+/* in the hand-written description on previous page.      */
+/* Crutial steps are also emphasised by inline comments   */
+/**********************************************************/
 
 #include <iostream>
 #include <fstream>
+#include <cassert>
+#include <cstdlib>
+using namespace std;
 
 int main(int argc, char* argv[]) {
     
-    std::ifstream read_file("x_and_y.dat");
+    // Get number of grid points from command line
+    // aruguments
+    int numberOfGridPoints = atoi(argv[1]);;
+    
+    // Calculate the step size h with in [0,1]
+    double h = (1.0 - 0.0) / numberOfGridPoints;
+    
+    ifstream read_file("x_and_y.dat");
     
     if (!read_file.is_open()) {
         
         return 1;
     }
     
-    int number_of_rows = 0;
+    int number_of_rows = N;
     
     while(!read_file.eof()) {
         
@@ -28,17 +37,17 @@ int main(int argc, char* argv[]) {
         
         // make sure
         if (read_file.fail()) {
-            std::cout << "woops, read fails" << std::endl;
+            ::cout << "woops, read fails" << ::endl;
             break;
         }
         number_of_rows++;
     }
     
-    std::cout << "Number of rows = "
+    ::cout << "Number of rows = "
     << number_of_rows << "\n";
     
     read_file.clear();
-    read_file.seekg(std::ios::beg);
+    read_file.seekg(::ios::beg);
     
     
     return 0;

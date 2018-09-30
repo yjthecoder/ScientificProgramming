@@ -1,9 +1,10 @@
-/*********************************************************/
-/* This program does the same as 3-1-1, exept that it    */
-/* flushes the output steam after each line of output.   */
-/* Note that there are two lines for two arrays, so I am */
-/* using two for loop to implement this                  */
-/*********************************************************/
+//
+//  main.cpp
+//  fileGenerator
+//
+//  Created by YUAN JI on 2018-09-30.
+//  Copyright © 2018 YUAN JI. All rights reserved.
+//
 
 #include <iostream>
 #include <fstream>
@@ -26,13 +27,13 @@ int main(int argc, const char * argv[]) {
     for (int i = 0; i < 4; i++) {
         if (i == 3) {
             outputFile << x[i] << "\n";
-            
-            // flush before new line
-            outputFile.flush();
         } else {
             outputFile << x[i] << " ";
         }
     }
+    
+    // flush before new line
+    outputFile.flush();
     
     // Print out y
     for (int i = 0; i < 4; i++) {
@@ -40,9 +41,9 @@ int main(int argc, const char * argv[]) {
             outputFile << y[i];
         } else {
             outputFile << y[i] << " ";
-            outputFile.flush();
         }
     }
-
+    outputFile.flush();
+    
     return 0;
 }
