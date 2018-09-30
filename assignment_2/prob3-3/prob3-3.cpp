@@ -45,12 +45,11 @@ int main(int argc, char* argv[]) {
             yi = yi / (1 + h);
         }
         
-        // Print "\n" for at end of each line
+        // Print xi and yi on each line followed
+        // by "\n" at end of each line
         outputFile << xi << " " << yi << "\n";
 
     }
-    
-    outputFile.flush();
     
     return 0;
 }
