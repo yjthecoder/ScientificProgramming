@@ -34,16 +34,14 @@ int main(int argc, const char * argv[]) {
     // Print out x
     for (int i = 0; i < 4; i++) {
         if (i == 3) {
-            
-            // Print out in  scientific notation
             outputFile << x[i] << "\n";
+            
+            // flush before new line
+            outputFile.flush();
         } else {
             outputFile << x[i] << " ";
         }
     }
-    
-    // flush before new line
-    outputFile.flush();
     
     // Print out y
     for (int i = 0; i < 4; i++) {
@@ -51,9 +49,9 @@ int main(int argc, const char * argv[]) {
             outputFile << y[i];
         } else {
             outputFile << y[i] << " ";
+            outputFile.flush();
         }
     }
-    outputFile.flush();
     
     return 0;
 }
