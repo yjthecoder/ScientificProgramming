@@ -1,35 +1,53 @@
 /*********************************************************/
-/* Problem 3.2                                           */
-/* This program uses the data file x_and_y.dat that was  */
-/* written in the previous exercise. The code below      */
-/* assumes that we know that the data file has 4 columns */
-/* and that we want to count the number of row           */
+/* This program does the same as 3-1-2, except that the  */
+/* output format has the precision set to 10 significant */
+/* figures, in scientific notation, and plus signs are   */
+/* shown for positive numbers.                           */
 /*********************************************************/
 
-#include <iostream> 
+#include <iostream>
 #include <fstream>
+#include <cassert>
+
+#include <iomanip>
+#include <cmath>
+#include <cfloat>
 using namespace std;
-int main(int argc, char* argv[]) {
+
+int main(int argc, const char * argv[]) {
     
-    ifstream read_file("x_and_y.dat");
+    double x[4] = {0.0, 1.0, 1.0, 0.0};
+    double y[4] = {0.0, 0.0, 1.0, 1.0};
     
-    if (!read_file.is_open() {
-        
-        return 1;
+    ofstream outputFile("x_and_y.dat");
+    assert(outputFile.is_open());
+    
+    // Set precision
+    outputFile.precision(10);
+    
+    // Print out x
+    for (int i = 0; i < 4; i++) {
+        if (i == 3) {
+            
+            // Print out in  scientific notation
+            outputFile << scientific << x[i] << "\n";
+        } else {
+            outputFile << scientific << x[i] << " ";
+        }
     }
-        
-    int number_of_rows = 0;
-        
-    while(!read_file.eof()) {
-        
-        double dummy1, dummy2, dummy3, dummy4;
-        read_file >> dummy1 >> dummy2;
-        read_file >> dummy3 >> dummy4;
-        number_of_rows++;
+    
+    // flush before new line
+    outputFile.flush();
+    
+    // Print out y
+    for (int i = 0; i < 4; i++) {
+        if (i == 3){
+            outputFile << scientific << y[i];
+        } else {
+            outputFile << scientific << y[i] << " ";
+        }
     }
-        
-    std::cout << "Number of rows = "
-              << number_of_rows << "\n";
-    read_file.close();
-    return 0; }
+    outputFile.flush();
+    
+    return 0;
 }
