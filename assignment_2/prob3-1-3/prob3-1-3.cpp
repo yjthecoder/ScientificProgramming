@@ -25,14 +25,20 @@ int main(int argc, const char * argv[]) {
     // Set precision
     outputFile.precision(10);
     
+    // Set scientific notation
+    outputFile.setf(ios::scientific);
+    
+    // Set show sign
+    outputFile.setf(ios::showpos);
+    
     // Print out x
     for (int i = 0; i < 4; i++) {
         if (i == 3) {
             
             // Print out in  scientific notation
-            outputFile << scientific << x[i] << "\n";
+            outputFile << x[i] << "\n";
         } else {
-            outputFile << scientific << x[i] << " ";
+            outputFile << x[i] << " ";
         }
     }
     
@@ -42,9 +48,9 @@ int main(int argc, const char * argv[]) {
     // Print out y
     for (int i = 0; i < 4; i++) {
         if (i == 3){
-            outputFile << scientific << y[i];
+            outputFile << y[i];
         } else {
-            outputFile << scientific << y[i] << " ";
+            outputFile << y[i] << " ";
         }
     }
     outputFile.flush();
