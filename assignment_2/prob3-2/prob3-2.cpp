@@ -17,25 +17,25 @@ int main(int argc, char* argv[]) {
         
         return 1;
     }
-        
     int number_of_rows = 0;
-        
+    
     while(!read_file.eof()) {
-
+        
         double dummy1, dummy2, dummy3, dummy4;
         read_file >> dummy1 >> dummy2;
         read_file >> dummy3 >> dummy4;
-
-        // make sure
+        
+        // Break the loop before increment number of rows
+        // if read fails
         if (read_file.fail()) {
             std::cout << "woops, read fails" << std::endl;
             break;
         }
         number_of_rows++;
     }
-        
+    
     std::cout << "Number of rows = "
-              << number_of_rows << "\n";
+    << number_of_rows << "\n";
     
     return 0;
 }
