@@ -38,9 +38,9 @@ int main(int argc, const char * argv[]) {
     for (int i = 0; i < 4; i++) {
         if (i == 3){
             outputFile << y[i];
+            outputFile.flush();
         } else {
             outputFile << y[i] << " ";
-            outputFile.flush();
         }
     }
 
