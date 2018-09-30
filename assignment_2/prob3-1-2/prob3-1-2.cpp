@@ -1,15 +1,48 @@
-//
-//  main.cpp
-//  prob3-1-2
-//
-//  Created by YUAN JI on 2018-09-29.
-//  Copyright © 2018 YUAN JI. All rights reserved.
-//
+/*********************************************************/
+/* This program does the same as 3-1-1, exept that it    */
+/* flushes the output steam after each line of output.   */
+/* Note that there are two lines for two arrays, so I am */
+/* using two for loop to implement this                  */
+/*********************************************************/
 
 #include <iostream>
+#include <fstream>
+#include <cassert>
+
+#include <iomanip>
+#include <cmath>
+#include <cfloat>
+using namespace std;
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    
+    double x[4] = {0.0, 1.0, 1.0, 0.0};
+    double y[4] = {0.0, 0.0, 1.0, 1.0};
+    
+    ofstream outputFile("x_and_y.dat");
+    assert(outputFile.is_open());
+    
+    // Print out x
+    for (int i = 0; i < 4; i++) {
+        if (i == 3) {
+            outputFile << x[i] << "\n";
+        } else {
+            outputFile << x[i] << " ";
+        }
+    }
+    
+    // flush before new line
+    outputFile.flush();
+    
+    // Print out y
+    for (int i = 0; i < 4; i++) {
+        if (i == 3){
+            outputFile << y[i];
+        } else {
+            outputFile << y[i] << " ";
+        }
+    }
+    outputFile.flush();
+
     return 0;
 }
