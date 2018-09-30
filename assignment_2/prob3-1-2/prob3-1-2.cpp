@@ -1,8 +1,8 @@
 //
 //  main.cpp
-//  prob3_1_2
+//  prob3-1-2
 //
-//  Created by YUAN JI on 2018-09-17.
+//  Created by YUAN JI on 2018-09-29.
 //  Copyright © 2018 YUAN JI. All rights reserved.
 //
 
