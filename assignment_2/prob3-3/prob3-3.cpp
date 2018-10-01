@@ -15,7 +15,10 @@ int main(int argc, char* argv[]) {
     
     // Get number of grid points from command line
     // aruguments
-    int N = atoi(argv[1]);;
+    int N = atoi(argv[1]);
+    
+    // Make sure number of grid points is greater than 1
+    assert(N >1);
     
     // Calculate the step size h with in [0,1]
     double h = (1.0 - 0.0) / N;
