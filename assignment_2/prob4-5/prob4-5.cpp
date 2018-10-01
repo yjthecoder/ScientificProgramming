@@ -13,13 +13,10 @@ using namespace std;
 
 int main(int argc, char* argv[]) {
     
-    // Get number of grid points from command line
-    // aruguments
-    int numberOfGridPoints = atoi(argv[1]);;
     
-    // Calculate the step size h with in [0,1]
-    double h = (1.0 - 0.0) / numberOfGridPoints;
+    int number_of_rows = 0;
     
+    // 1st read, get number of rows
     ifstream read_file("x_and_y.dat");
     
     if (!read_file.is_open()) {
@@ -27,13 +24,10 @@ int main(int argc, char* argv[]) {
         return 1;
     }
     
-    int number_of_rows = N;
-    
     while(!read_file.eof()) {
         
-        double dummy1, dummy2, dummy3, dummy4;
+        double dummy1, dummy2;
         read_file >> dummy1 >> dummy2;
-        read_file >> dummy3 >> dummy4;
         
         // make sure
         if (read_file.fail()) {
