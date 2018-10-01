@@ -29,15 +29,17 @@ int main(int argc, char* argv[]) {
         double dummy1, dummy2;
         read_file >> dummy1 >> dummy2;
         
-        // make sure
+        // Break the loop before increment number of rows
+        // if read fails
         if (read_file.fail()) {
-            ::cout << "woops, read fails" << ::endl;
+            std::cout << "woops, read fails" << std::endl;
             break;
         }
+        
         number_of_rows++;
     }
     
-    ::cout << "Number of rows = "
+    cout << "Number of rows = "
     << number_of_rows << "\n";
     
     read_file.clear();
