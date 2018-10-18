@@ -1,10 +1,6 @@
-//
-//  GenerateNRandomNmbrs.cpp
-//  assignment_3
-//
-//  Created by YUAN JI on 2018-10-17.
-//  Copyright © 2018 YUAN JI. All rights reserved.
-//
+// The function to populate the array of
+// specified size with random double numbers
+// within [0.0, 1.0]
 
 #include "prob5_4.h"
 

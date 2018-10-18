@@ -1,10 +1,5 @@
-//
-//  CalculateMean.cpp
-//  assignment_3
-//
-//  Created by YUAN JI on 2018-10-17.
-//  Copyright © 2018 YUAN JI. All rights reserved.
-//
+// The function to calculate the
+// mean that returns the mean.
 
 #include "prob5_4.h"
 

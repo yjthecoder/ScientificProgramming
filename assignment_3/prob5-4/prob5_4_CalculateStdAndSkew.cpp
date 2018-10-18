@@ -1,13 +1,14 @@
-//  CalculateStdAndSkew.cpp
-//  assignment_3
-//
-//  Created by YUAN JI on 2018-10-18.
-//  Copyright © 2018 YUAN JI. All rights reserved.
-//
+// The function always calculates the
+// standard deviation. It only calculates
+// the skew if the optional 4th arguments is
+// passed from the caller.
 
 #include "prob5_4.h"
 #include <cmath>
 
+// Note that the default value for the skew pointer has
+// already specified in the prototype, no need to be
+// specified here
 void CalculateStdAndSkew(int size, double* data, double& std, double* skew) {
     
     // Get the mean of data
