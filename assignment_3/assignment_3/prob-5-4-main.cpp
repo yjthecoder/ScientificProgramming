@@ -7,9 +7,25 @@
 //
 
 #include <iostream>
+using namespace std;
+
+
+void p5-4-test(double* x = nullptr){
+    if(x) {
+        *x = 11.1;
+    }
+}
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    std::cout << "Hello, World!\n";
+    double x = 9.9;
+    
+    
+    cout << x << endl;
+    
+    p5-4-test(&x);
+    
+    cout << x << endl;
+    
     return 0;
 }

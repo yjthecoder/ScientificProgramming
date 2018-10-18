@@ -6,7 +6,8 @@
 //  Copyright © 2018 YUAN JI. All rights reserved.
 //
 
-#include <stdio.h>
+#include "prob5_4.h"
+
 #include <stdlib.h>
 #include <time.h>
 
@@ -15,13 +16,13 @@ void GenerateNRandomNmbrs(int size, double* data) {
     int randomint;
     double randomdoub;
     
-    // initialize random seed
+    // Initialize random seed
     srand ((unsigned) time(NULL));
     
     for (int i = 0; i < size; i++) {
         
-        // generate a random number and put it in
-        // the array
+        // Generate a random number and put it in
+        // the data array
         randomint = rand();
         randomdoub= static_cast<double>(randomint) / RAND_MAX;
         

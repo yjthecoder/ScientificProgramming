@@ -5,19 +5,18 @@
 // and pass a pointer to the first element to other
 // functions
 
-#include <iostream>
-#include "prob5-4.h"
+#include "prob5_4.h"
 
 int main(int argc, const char * argv[]) {
     
     // Get number of grid points from command line
     // aruguments as the size of data
-    //int N = atoi(argv[1]);
+// int N = atoi(argv[1]);
     
     //test
-    int N = 100;
+    int N = 10000;
     
-    // dynamically allocate memory for the numbers
+    // Dynamically allocate memory for the data array
     double *data = new double [N];
     
     GenerateNRandomNmbrs(N, data);
@@ -29,9 +28,26 @@ int main(int argc, const char * argv[]) {
         cout << data[i] << endl;
     }
     
+    // Print the mean
     cout << "Mean: " << mean << endl;
     
-    // release memory
+    
+    double std = 0.0;
+    CalculateStdAndSkew(N, data, std);
+    
+    // Print the standard deviation
+    cout << "Standard deviation: " << std <<endl;
+    
+    
+    // Calculate the skew by passing the optional 4th var
+    double *skew = new double;
+    *skew = 0.0;
+    CalculateStdAndSkew(N, data, std, skew);
+    
+    // Print the standard deviation
+    cout << "Standard deviation, skew: " << std << ", "<< *skew <<endl;
+    
+    // Release memory
     delete [] data;
     data = nullptr;
     

@@ -6,16 +6,16 @@
 //  Copyright © 2018 YUAN JI. All rights reserved.
 //
 
-#include <stdio.h>
+#include "prob5_4.h"
 
 double CalculateMean(int size, double* data){
     
-    // calculate sum
-    double sum;
+    // Calculate sum
+    double sum = 0;
     for (int i = 0; i < size; i++) {
         sum += data[i];
     }
     
-    // calculate and return mean
+    // Calculate and return mean
     return sum / size;
 }
