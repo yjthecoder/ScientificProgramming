@@ -138,6 +138,7 @@ int main(int argc, const char * argv[]) {
     
     
     // Calculate matrix D = AB
+    // Dij is the sum of product of every element in row i of A and every every element in colum j of B (total k element)
     for (int i=0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
             for (int k = 0; k < 3; k++) {

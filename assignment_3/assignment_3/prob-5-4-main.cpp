@@ -10,7 +10,7 @@
 using namespace std;
 
 
-void p5-4-test(double* x = nullptr){
+void p5_4_test(double* x = nullptr){
     if(x) {
         *x = 11.1;
     }
@@ -23,7 +23,7 @@ int main(int argc, const char * argv[]) {
     
     cout << x << endl;
     
-    p5-4-test(&x);
+    p5_4_test(&x);
     
     cout << x << endl;
     

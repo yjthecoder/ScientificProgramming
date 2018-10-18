@@ -1,19 +1,23 @@
-//
-//  Multiply.cpp
-//  assignment_3
-//
-//  Created by YUAN JI on 2018-10-18.
-//  Copyright © 2018 YUAN JI. All rights reserved.
-//
+// The function multiplies two matrices
 
-#include <stdio.h>
+#include "prob5_5.h"
 
-double Multiply(int row, int col, double** A, double** B, double** C){
+void Multiply(int Arows, int Acols, int Brows,
+              int Bcols, double** A, double** B, double** C){
     
+    // Initialize the number of products to be added
+    // together to get one element in the resulting
+    // matrix C
+    int nbrOfProducts = Acols;
     
-    for (int i=0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            for (int k = 0; k < 3; k++) {
+    for (int i=0; i < Arows; i++) {
+        for (int j = 0; j < Bcols; j++) {
+            
+            // Get rid of potential garbage value
+            C[i][j] = 0;
+            
+            // Calculate C[i][j]
+            for (int k = 0; k < nbrOfProducts; k++) {
                 C[i][j] += A[i][k] * B[k][j];
             }
         }
