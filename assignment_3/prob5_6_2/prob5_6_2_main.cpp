@@ -18,7 +18,7 @@ int main(int argc, const char * argv[]) {
     // from command line args
     //    int vectorRows = atoi(argv[1]);
     //    int matrixRows = atoi(argv[2]);
-    //    int matrixCols = atoi(argv[2]);
+    //    int matrixCols = atoi(argv[3]);
     
     //test
     int matrixRows = 2;
@@ -38,7 +38,6 @@ int main(int argc, const char * argv[]) {
     assert(validSize);
     
     // Dynamically allocate memory for the matrix
-    
     double** Matrix;
     Matrix = new double* [matrixRows];
     Matrix[0] = new double [matrixRows * matrixCols];

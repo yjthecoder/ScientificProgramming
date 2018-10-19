@@ -1,9 +1,12 @@
-//
-//  prob5_6_4_Multiply.cpp
-//  assignment_3
-//
-//  Created by YUAN JI on 2018-10-18.
-//  Copyright © 2018 YUAN JI. All rights reserved.
-//
+// The function multiplies a matrix with a scalar
 
-#include <stdio.h>
+void Multiply(int matrixRows, int matrixCols, double scalar, double** Matrix){
+
+    // Simply multiply each element of the matrix
+    // with the scalar and replace the element at the same position
+    for (int i=0; i < matrixRows; i++) {
+        for (int j = 0; j < matrixCols; j++) {
+            Matrix[i][j] *= scalar;
+        }
+    }
+}

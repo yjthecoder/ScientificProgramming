@@ -18,7 +18,7 @@ int main(int argc, const char * argv[]) {
     // from command line args
     //    int vectorCols = atoi(argv[1]);
     //    int matrixRows = atoi(argv[2]);
-    //    int matrixCols = atoi(argv[2]);
+    //    int matrixCols = atoi(argv[3]);
     
     //test
     // Note that for the vector appear on the left of multiplication
